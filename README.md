@@ -1,7 +1,8 @@
 # Coffee App
 
 
-
+ - Adding Drip image manually since Lollipop disables it 
+    http://www.google.com/design/spec/layout/structure.html#structure-toolbars
 
 Libraries
 =========

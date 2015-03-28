@@ -2,7 +2,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/list_item">
+    android:id="@+id/list_item"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp">
 
     <TextView
         android:id="@+id/coffee_name"
@@ -10,6 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
+        android:textColor="@color/gray_dark"
         android:text="Coffee Name"/>
 
 
@@ -22,14 +25,17 @@
         android:layout_below="@+id/coffee_name"
         android:layout_toLeftOf="@+id/arrow_img"
         android:layout_toStartOf="@+id/arrow_img"
+        android:paddingTop="5dp"
         android:maxLines="2"
+        android:textColor="@color/gray"
         android:text="Coffee Description"/>
 
 
     <ImageView
         android:id="@+id/coffee_img"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingTop="5dp"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/coffee_description" />
 
