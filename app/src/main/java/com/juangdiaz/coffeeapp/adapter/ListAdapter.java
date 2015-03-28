@@ -14,6 +14,9 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
+import butterknife.ButterKnife;
+import butterknife.InjectView;
+
 /**
  * Created by juangdiaz on 3/28/15.
  */
@@ -36,16 +39,12 @@ public class ListAdapter extends ArrayAdapter<Coffee> {
         ResultsViewHolder holder;
 
         if (row == null) {
-
             row = mLayoutInflater.inflate(R.layout.coffee_list, parent, false);
             holder = new ResultsViewHolder(row);
             row.setTag(holder);
-
         }
         else {
-
             holder = (ResultsViewHolder) row.getTag();
-
         }
 
         Coffee results = getItem(position);
@@ -64,18 +63,14 @@ public class ListAdapter extends ArrayAdapter<Coffee> {
 
     }
 
+     static final class ResultsViewHolder {
 
-    private static final class ResultsViewHolder {
-
-        public TextView coffeeName;
-        public TextView coffeeDescription;
-        public ImageView coffeeImg;
+        @InjectView(R.id.coffee_name) TextView coffeeName;
+        @InjectView(R.id.coffee_description) TextView coffeeDescription;
+        @InjectView(R.id.coffee_img) ImageView coffeeImg;
 
         public ResultsViewHolder(View v) {
-
-            coffeeName = (TextView) v.findViewById(R.id.coffee_name);
-            coffeeDescription = (TextView) v.findViewById(R.id.coffee_description);
-            coffeeImg = (ImageView) v.findViewById(R.id.coffee_img);
+            ButterKnife.inject(this, v);
         }
 
 
