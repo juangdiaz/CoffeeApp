@@ -6,13 +6,15 @@
 
     <application
         android:allowBackup="true"
+        android:icon="@drawable/drip"
         android:label="@string/app_name"
-        android:theme="@style/CustomActionBarTheme"
-        android:icon="@drawable/drip">
+        android:theme="@style/CustomActionBarTheme" >
         <activity
             android:name=".activities.CoffeeMainActivity"
-            android:logo="@drawable/drip_white"
-            >
+            android:logo="@drawable/drip_white" >
+        </activity>
+        <activity
+            android:name=".activities.SplashScreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
