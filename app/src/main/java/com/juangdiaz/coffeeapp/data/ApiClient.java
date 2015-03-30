@@ -43,7 +43,7 @@ public class ApiClient {
 
         @Headers("Authorization: WuVbkuUsCXHPx3hsQzus4SE")
         @GET("/{id}/")
-        Observable<Coffee> DetailCoffee(
+        Observable<Coffee> detailCoffee(
                 @Path("id") String id);
 
 

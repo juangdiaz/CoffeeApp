@@ -118,7 +118,7 @@ public class CoffeeDetailFragment extends Fragment {
 
     private void downloadData(String id){
         showLoading();
-        ApiClient.getCoffeeApiClient().DetailCoffee(id)
+        ApiClient.getCoffeeApiClient().detailCoffee(id)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Subscriber<Coffee>() {
                     @Override
@@ -129,7 +129,7 @@ public class CoffeeDetailFragment extends Fragment {
 
                     @Override
                     public void onError(Throwable e) {
-                        Toast.makeText(getActivity(), "Failed to retrieve list",
+                        Toast.makeText(getActivity(), "Failed to retrieve Details",
                                 Toast.LENGTH_LONG).show();
                     }
 
