@@ -1,14 +1,18 @@
 package com.juangdiaz.coffeeapp.activities;
 
-import android.app.ActionBar;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.juangdiaz.coffeeapp.R;
+import com.juangdiaz.coffeeapp.fragments.CoffeeDetailFragment;
+import com.juangdiaz.coffeeapp.fragments.CoffeeListFragment;
 
-public class CoffeeMainActivity extends ActionBarActivity {
+public class CoffeeMainActivity extends ActionBarActivity  implements CoffeeListFragment.Callbacks{
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,5 +44,17 @@ public class CoffeeMainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    /**
+     * Callback method from {@link com.juangdiaz.coffeeapp.fragments.CoffeeListFragment.Callbacks
+     * indicating that the item with the given ID was selected.
+     */
+    @Override
+    public void onItemSelected(String id) {
+
+        Intent detailIntent = new Intent(getApplicationContext(), CoffeeDetailActivity.class);
+        detailIntent.putExtra(CoffeeDetailFragment.ARG_COFFEE_ID, id);
+        startActivity(detailIntent);
     }
 }

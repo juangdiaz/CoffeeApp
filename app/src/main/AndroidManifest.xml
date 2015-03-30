@@ -13,13 +13,16 @@
             android:name=".activities.CoffeeMainActivity"
             android:logo="@drawable/drip_white" >
         </activity>
-        <activity
-            android:name=".activities.SplashScreen" >
+        <activity android:name=".activities.SplashScreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.CoffeeDetailActivity"
+            android:label="@string/title_activity_coffee_detail" >
         </activity>
     </application>
 

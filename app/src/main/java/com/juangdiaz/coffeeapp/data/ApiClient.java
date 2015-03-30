@@ -9,6 +9,7 @@ import retrofit.RestAdapter;
 import retrofit.converter.JacksonConverter;
 import retrofit.http.GET;
 import retrofit.http.Headers;
+import retrofit.http.Path;
 import rx.Observable;
 
 /**
@@ -38,6 +39,14 @@ public class ApiClient {
         @Headers("Authorization: WuVbkuUsCXHPx3hsQzus4SE")
         @GET("/")
         Observable<List<Coffee>> listCoffee();
+
+
+        @Headers("Authorization: WuVbkuUsCXHPx3hsQzus4SE")
+        @GET("/{id}/")
+        Observable<Coffee> DetailCoffee(
+                @Path("id") String id);
+
+
     }
 
 
