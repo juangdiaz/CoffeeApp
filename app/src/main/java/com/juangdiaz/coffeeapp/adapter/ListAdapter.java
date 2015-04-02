@@ -1,6 +1,7 @@
 package com.juangdiaz.coffeeapp.adapter;
 
 import android.content.Context;
+import android.graphics.drawable.BitmapDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -57,6 +58,9 @@ public class ListAdapter extends ArrayAdapter<Coffee> {
             Picasso.with(getContext())
                     .load(results.getImage_url())
                     .into(holder.coffeeImg);
+        }
+        else {
+            ((BitmapDrawable)holder.coffeeImg.getDrawable()).getBitmap().recycle();
         }
 
         return row;
