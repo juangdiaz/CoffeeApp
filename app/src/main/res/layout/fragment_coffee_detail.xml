@@ -1,53 +1,59 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:tools="http://schemas.android.com/tools"
-android:id="@+id/coffee_detail_container"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-tools:context="com.juangdiaz.coffeeapp.fragments.CoffeeDetailFragment"
-tools:ignore="MergeRootFrame">
-
-
-<LinearLayout
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coffee_detail_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/coffee_detail_Layout"
-    android:orientation="vertical"
-    android:padding="16dp">
+    tools:context="com.juangdiaz.coffeeapp.fragments.CoffeeDetailFragment"
+    tools:ignore="MergeRootFrame">
 
-
-    <TextView
-        android:id="@+id/coffee_detail_name"
-        android:layout_width="match_parent"
+    <ScrollView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/divider"
-        android:textColor="@color/gray_dark"
-        android:textSize="16sp"/>
+        android:id="@+id/scrollView">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/coffee_detail_Layout"
+            android:orientation="vertical"
+            android:padding="16dp">
 
 
-    <TextView
-        android:id="@+id/coffee_detail_description"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:textColor="@color/gray"/>
+            <TextView
+                android:id="@+id/coffee_detail_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/divider"
+                android:textColor="@color/gray_dark"
+                android:textSize="16sp" />
 
 
-    <ImageView
-        android:id="@+id/coffee_detail_img"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp" />
+            <TextView
+                android:id="@+id/coffee_detail_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/gray" />
 
 
-    <TextView
-        android:id="@+id/coffee_detail_last_updated"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:textColor="@color/gray"
-        android:textStyle="italic"/>
+            <ImageView
+                android:id="@+id/coffee_detail_img"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp" />
 
 
-</LinearLayout>
+            <TextView
+                android:id="@+id/coffee_detail_last_updated"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/gray"
+                android:textStyle="italic" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
 </FrameLayout>
 
