@@ -22,16 +22,18 @@ public class ApiClient {
 
     public static CoffeeApiInterface getCoffeeApiClient() {
 
-        //Jackson Converter
-        JacksonConverter jacksonConverter = new JacksonConverter();
+        if (sCoffeeService == null) {
+            //Jackson Converter
+            JacksonConverter jacksonConverter = new JacksonConverter();
 
-        RestAdapter restAdapter = new RestAdapter.Builder()
-                .setLogLevel(RestAdapter.LogLevel.FULL)
-                .setConverter(jacksonConverter)
-                .setEndpoint("https://coffeeapi.percolate.com/api/coffee")
-                .build();
+            RestAdapter restAdapter = new RestAdapter.Builder()
+                    .setLogLevel(RestAdapter.LogLevel.FULL)
+                    .setConverter(jacksonConverter)
+                    .setEndpoint("https://coffeeapi.percolate.com/api/coffee")
+                    .build();
 
-        sCoffeeService = restAdapter.create(CoffeeApiInterface.class);
+            sCoffeeService = restAdapter.create(CoffeeApiInterface.class);
+        }
         return sCoffeeService;
     }
     public interface CoffeeApiInterface{
